@@ -33,6 +33,19 @@ namespace Assets.Script.Entities
                 }
             }
         }
+        public AudioClip audioClipAttack;
+        public AudioClip audioClipDeath;
+
+        public override bool TryAttack()
+        {
+            if (base.TryAttack())
+            {
+                if (audioClipAttack != null)
+                    AudioManager.AudioSource.PlayOneShot(audioClipAttack);
+                return true;
+            }
+            return false;
+        }
 
         // Start is called before the first frame update
         new void Start()
@@ -49,7 +62,7 @@ namespace Assets.Script.Entities
             {
                 if (Input.GetKey(KeyCode.Escape))
                 {
-                    ScèneLoad.GoToMenuPrincipale();
+                    ScÃ¨neLoad.GoToMenuPrincipale();
                 }
                 //if (Input.GetKey(KeyCode.M))
                 //{
@@ -167,12 +180,16 @@ namespace Assets.Script.Entities
 
             // Go the the main menu in 5 seconds
             EntityPlayer oplayer = SpriteManager.GetOriginalPlayer().GetComponent<EntityPlayer>();
-            oplayer.Invoke(nameof(GoToMenuPrincipale), 3);
+            oplayer.Invoke(nameof(GoToMenuPrincipale), 6);
+
+            AudioManager.StopByDeath();
+            if (audioClipDeath != null)
+                AudioManager.AudioSource.PlayOneShot(audioClipDeath, 0.5f);
         }
 
         public void GoToMenuPrincipale()
         {
-            ScèneLoad.GoToMenuPrincipale();
+            ScÃ¨neLoad.GoToMenuPrincipale();
         }
     }
 }

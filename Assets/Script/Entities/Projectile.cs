@@ -31,7 +31,7 @@ namespace Assets.Script.Entities
 
         internal void SetRotation(Quaternion rotation)
         {
-            velocity = rotation * Vector3.up * 1e-2f;
+            velocity = rotation * Vector3.up * Time.deltaTime * 5 * (isOwnerPlayer ? 1 : 0.5f);
             transform.rotation = rotation * Quaternion.Euler(0, 0, 90);
         }
 

@@ -245,7 +245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -359,6 +359,7 @@ MonoBehaviour:
   audioSource: {fileID: 157050683}
   audioClipLevelStart: {fileID: 8300000, guid: 3b541a527c8d7044f84b134ffac426a9, type: 3}
   audioClipLevelLoop: {fileID: 8300000, guid: 86639b24921a46f49907e882d68000d1, type: 3}
+  audioClipStart: {fileID: 8300000, guid: 77d1eb9510dd5dd4da638532a88776b6, type: 3}
 --- !u!82 &157050683
 AudioSource:
   m_ObjectHideFlags: 0
@@ -958,7 +959,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   typeClasse: 1
-  audioClipAttack: {fileID: 0}
   Dead: {fileID: 21300000, guid: 94a454c69bbcf0b45a24c42a7878d7a4, type: 3}
 --- !u!212 &504775511
 SpriteRenderer:
@@ -1172,7 +1172,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   typeClasse: 3
-  audioClipAttack: {fileID: 0}
   Dead: {fileID: 21300000, guid: ee7c8b80b3732334ea6225d7cd00b70e, type: 3}
 --- !u!212 &585074854
 SpriteRenderer:
@@ -1405,7 +1404,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   typeClasse: 2
-  audioClipAttack: {fileID: 0}
   Dead: {fileID: 21300000, guid: a57092f828355b54384e9934d6b3ad44, type: 3}
 --- !u!212 &873306958
 SpriteRenderer:
@@ -2039,7 +2037,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   typeClasse: 0
-  audioClipAttack: {fileID: 0}
   Dead: {fileID: 0}
 --- !u!1 &1601487286
 GameObject:
@@ -2512,9 +2509,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   typeClasse: 1
-  audioClipAttack: {fileID: 0}
   Dead: {fileID: 0}
   textScorePrefab: {fileID: 20606798}
+  audioClipAttack: {fileID: 8300000, guid: 04b48c198154a3345a5d74cfb12df90b, type: 3}
+  audioClipDeath: {fileID: 8300000, guid: ba20a3477b9d89042b5023e0871eca92, type: 3}
 --- !u!65 &1816767215
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2722,7 +2720,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   typeClasse: 0
-  audioClipAttack: {fileID: 0}
   Dead: {fileID: 0}
 --- !u!212 &2098937666
 SpriteRenderer:

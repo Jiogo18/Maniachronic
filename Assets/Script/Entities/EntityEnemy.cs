@@ -20,7 +20,7 @@ namespace Assets.Script.Entities
         {
             base.Start();
             seed = Random.Range(0, 1000000);
-            velocity = new Vector3(-Speed * 0.005f, 0, 0);
+            velocity = new Vector3(-Speed * 0.1f, 0, 0);
         }
 
         // Update is called once per frame
@@ -42,18 +42,18 @@ namespace Assets.Script.Entities
             if (player != null)
             {
                 Vector3 playerForce = player.transform.position - transform.position;
-                velocity += playerForce.normalized * 0.0001f;
+                velocity += playerForce.normalized * 0.02f;
             }
 
             // Add a random force
             float perlinNoisePlusMinus = Mathf.PerlinNoise(seed, Time.time) - 0.47f;
-            velocity += new Vector3(0, perlinNoisePlusMinus, 0) * 0.00005f;
+            velocity += new Vector3(0, perlinNoisePlusMinus, 0) * 0.005f;
 
             // Cap the velocity
-            velocity = Vector3.ClampMagnitude(velocity, Speed * 0.005f);
+            velocity = Vector3.ClampMagnitude(velocity, Speed * 2f);
 
             // Move the enemy
-            transform.position = transform.position + velocity;
+            transform.position = transform.position + Time.deltaTime * velocity;
         }
 
         protected override void OnDeath()

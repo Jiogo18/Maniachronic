@@ -12,7 +12,7 @@ namespace Assets.Script.Classes
 
         public override int AttackDamage => 2;
 
-        public override float AttackDelay => 0.4f;
+        public override float AttackDelay => 0.5f;
 
         public override string ProjectilePrefabName => "ProjectileShuriken";
     }

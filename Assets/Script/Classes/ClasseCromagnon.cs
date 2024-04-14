@@ -4,7 +4,7 @@
     {
         public override string ClassePrefabName => "EnemyCromagnon";
 
-        public override int BaseHealth => 1;
+        public override int BaseHealth => 2;
 
         public override float BaseSpeed => 1;
 

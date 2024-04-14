@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 332454870}
   - component: {fileID: 332454869}
   m_Layer: 5
-  m_Name: Image
+  m_Name: ImageTitle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -445,7 +445,7 @@ GameObject:
   - component: {fileID: 1508514479}
   - component: {fileID: 1508514478}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: ImageGame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -593,6 +593,7 @@ MonoBehaviour:
   audioSource: {fileID: 1640439158}
   audioClipLevelStart: {fileID: 8300000, guid: dd2beda227da80941ab5d09edb794927, type: 3}
   audioClipLevelLoop: {fileID: 8300000, guid: dd2beda227da80941ab5d09edb794927, type: 3}
+  audioClipStart: {fileID: 0}
 --- !u!82 &1640439158
 AudioSource:
   m_ObjectHideFlags: 0
@@ -703,7 +704,7 @@ GameObject:
   - component: {fileID: 1740951860}
   - component: {fileID: 1740951863}
   m_Layer: 5
-  m_Name: cuit
+  m_Name: Quit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

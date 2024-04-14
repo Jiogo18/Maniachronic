@@ -14,7 +14,6 @@ namespace Assets.Script.Entities
 
         public ClasseBase Classe { get; private set; }
         public TypeClasse typeClasse;
-        public AudioClip audioClipAttack;
 
         public void SetClasse(TypeClasse typeClasse)
         {
@@ -40,17 +39,16 @@ namespace Assets.Script.Entities
             return LastAttack + AttackDelay < Time.time;
         }
 
-        public void TryAttack()
+        public virtual bool TryAttack()
         {
             if (CanAttack())
             {
                 LastAttack = Time.time;
 
                 Classe.Attack(this);
-
-                if (audioClipAttack != null)
-                    AudioManager.AudioSource.PlayOneShot(audioClipAttack, this is EntityPlayer ? 1 : 0.2f);
+                return true;
             }
+            return false;
         }
 
         // Awake is called when the script instance is being loaded

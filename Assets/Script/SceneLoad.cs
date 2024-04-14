@@ -8,20 +8,19 @@ public class ScèneLoad : MonoBehaviour
     public enum EnumLevel
     {
         Level1, Level2, Level3,
-        MainMenu
+        MainMenu, MenuClasse
     }
     private EnumLevel level;
     public static TypeClasse typeClasse { get; private set; }
 
     public void LoadScene()
     {
-        Debug.Log("scene to load" + MyScene);
-        SceneManager.LoadScene(MyScene);
         level = MyScene switch
         {
             "Play" => EnumLevel.Level1,
             "Play 1" => EnumLevel.Level2,
             "Play 2" => EnumLevel.Level3,
+            "MenuClasse" => EnumLevel.MenuClasse,
             _ => EnumLevel.MainMenu,
         };
         typeClasse = MyScene switch
@@ -31,22 +30,22 @@ public class ScèneLoad : MonoBehaviour
             "Play 2" => TypeClasse.Futuriste,
             _ => TypeClasse.Cromagnon,
         };
-
-        //var audioManager = Object.FindFirstObjectByType<AudioManager>();
-        //audioManager.SetCurrentLevel(level);
+        // MainMenu <-> MenuClasse
+        AudioManager.SaveMusicTime();
+        SceneManager.LoadScene(MyScene);
     }
 
     private void Update()
     {
         if (Input.GetKeyUp(KeyCode.Escape))
         {
-            SceneManager.LoadScene(MyScene);
+            GoToMenuPrincipale();
         }
     }
 
     public static void GoToMenuPrincipale()
     {
+        AudioManager.SaveMusicTime();
         SceneManager.LoadScene("MenuPrincipale");
-        Debug.Log("GoToMenuPrincipale");
     }
 }

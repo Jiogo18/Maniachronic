@@ -20,6 +20,9 @@
         {
             InvokeRepeating(nameof(SpawnRandomAnimal), delay, spawnInterval);
             EntityPlayer.CreateNewPlayer(ScèneLoad.typeClasse);
+
+            var audioManager = Object.FindFirstObjectByType<AudioManager>();
+            audioManager.audioSource.PlayOneShot(audioManager.audioClipStart, 0.5f);
         }
 
         // Update is called once per frame

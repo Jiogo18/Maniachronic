@@ -17,6 +17,7 @@ class AudioManager : MonoBehaviour
     {
         AudioSource = audioSource;
         audioSource.clip = audioClipLevelStart;
+        canPlay = true;
 
         if (previousMusicTime > 0 && previousAudioClip == audioClipLevelStart)
         {
